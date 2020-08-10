@@ -84,8 +84,8 @@ for index_, well_num in enumerate(sw_excel.sheet_names[:-1]):
             w_crm = pm.Normal('w_crm', mu=0, sd=1)
             w_xgb = pm.Normal('w_xgb', mu=0, sd=1)
             w_eln = pm.Normal('w_eln', mu=0, sd=1)
-            # w6 = pm.HalfNormal('w6', sd=80)
-            # w7 = pm.HalfNormal('w7', sd=30)
+            w6 = pm.HalfNormal('w6', sd=80)
+            w7 = pm.HalfNormal('w7', sd=30)
 
             mu = pm.Deterministic('mu',
                                   w0 + w1 * Q_model1 + w2 * Q_model2 + w3 * Q_model3 + w4 * Q_model4
